@@ -105,7 +105,8 @@ public class ImageLinkPicker {
     private void browseImage() throws IOException {
         var link = Main.openImageFileDialog();
         if (!link.isEmpty()) {
-            linkTxtField.setText("file:/" + link);
+            //linkTxtField.setText("file:/" + link); // useful for windows I think
+            linkTxtField.setText("file:" + link); // useful for linux
         }
 
     }

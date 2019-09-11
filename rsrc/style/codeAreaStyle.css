@@ -1,7 +1,8 @@
 .text {
-    -fx-fill: white;
+    /* -fx-fill: white; */
+    -fx-fill: black;
 }
-
+file:
 .title1 {
 	-fx-fill: #81cfe0;
 	-fx-font-size: 30px;
@@ -33,23 +34,27 @@
 }
 
 .bold {
-	-fx-fill: white;
+	/* -fx-fill: white; */
+	-fx-fill: black;
 	-fx-font-weight: bold;
 }
 
 .italic {
-    -fx-fill: #ffffcc;
+    /* -fx-fill: #ffffcc; */
+    -fx-fill: #222222;
     -fx-font-style: italic;
 }
 
 .italicbold {
-    -fx-fill: #fff9de;
+    /* -fx-fill: #fff9de; */
+    -fx-fill: #222222;
     -fx-font-weight: bold;
     -fx-font-style: italic;
 }
 
 .boldstrikethrough {
-    -fx-fill: white;
+    /* -fx-fill: white; */
+    -fx-fill: black;
     -fx-font-weight: bold;
     -fx-strikethrough: true;
 }
@@ -58,12 +63,15 @@
     -fx-strikethrough: true;
 }
 
-.styled-text-area {
-    -fx-background-color: #222222;
+.styled-text-area { 
+    /* -fx-background-color: #222222;  /* this is black */ */
+    /* -fx-background-color: #F5DEB3;  /* this is wheat*/ */
+	-fx-background-color: #FFFFFF; /* this is white */
 }
 
 .lineno {
- -fx-background-color: black;
+ 	/* -fx-background-color: black; */
+ 	-fx-background-color: white;
 }
 
 .balise {

@@ -29,3 +29,12 @@ hs_err_pid*
 *.iml
 .idea/
 out/
+
+# added
+/bin/
+
+/target/
+.settings
+/bin/
+/.project
+/.classpath

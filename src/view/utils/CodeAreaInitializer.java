@@ -57,7 +57,7 @@ public abstract class CodeAreaInitializer {
     }
 
     private static StyleSpans<Collection<String>> computeHighlighting(String text) {
-        Matcher matcher = PATTERN.matcher(text); // Adding an espace to get arround with \ character
+        Matcher matcher = PATTERN.matcher(text); // Adding an espace to get around with \ character
         int lastKwEnd = 0;
         StyleSpansBuilder<Collection<String>> spansBuilder
                 = new StyleSpansBuilder<>();

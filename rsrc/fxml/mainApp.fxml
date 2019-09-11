@@ -86,6 +86,11 @@
                                 <ImageView image="$btnImagePicture" />
                             </graphic>
                         </Button>
+                        <Button onAction="#clipboardImage" minWidth="$btnSize" minHeight="$btnSize">
+                            <graphic>
+                                <ImageView image="$btnImagePicture" />
+                            </graphic>
+                        </Button>
                         <Button onAction="#link" minWidth="$btnSize" minHeight="$btnSize"  text="⛓"/>
                         <Button onAction="#olList" minWidth="$btnSize" minHeight="$btnSize">
                             <graphic>
