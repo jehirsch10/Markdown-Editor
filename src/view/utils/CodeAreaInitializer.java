@@ -12,6 +12,7 @@ import java.util.Collections;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+// FIGURES OUT HOW TO STYLE THE CODE AREA CODE
 public abstract class CodeAreaInitializer {
     private static final String BOLD_PATTERN = PatternFactory.generateMultilinedBalisePattern("[*_]{2}", "BOLD");
     private static final String ITALIC_PATTERN = PatternFactory.generateMultilinedBalisePattern("[*_]", "ITALIC");

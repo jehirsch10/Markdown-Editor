@@ -1,5 +1,5 @@
 .root {
-    -fx-base: black;
+    -fx-base: white;
 }
 
 #strikeThroughBtn.button .text {
@@ -7,14 +7,15 @@
 }
 
 .button, .combo-box {
-    -fx-background-color: #222222;
+/*     -fx-background-color: #222222; */
+    -fx-background-color: #d3d3d3;
     -fx-background-radius: 0;
-    -fx-text-fill: #ddd;
+    -fx-text-fill: #5b5b5b;
     -fx-font-size: 14px;
 }
 
 .button:hover, .combo-box:hover {
-    -fx-background-color: #191919;
+    -fx-background-color: #a9a9a9;
     -fx-text-fill: #eee;
 }
 
@@ -29,7 +30,7 @@
 }
 
 .menu-bar {
-    -fx-background-color: #222222;
+    -fx-background-color: #ffffff;
     -fx-background-radius: 0;
     -fx-text-fill: #ddd;
     -fx-font-size: 14px;

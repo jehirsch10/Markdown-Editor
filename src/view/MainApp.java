@@ -27,6 +27,8 @@ import java.util.ResourceBundle;
 
 import javax.imageio.ImageIO;
 
+
+// IMPLEMENTS THE BASIC FUNCTIONALITY OF ALL BUTTONS
 public class MainApp {
     private ManagerVM vm = new ManagerVM();
 
@@ -66,8 +68,8 @@ public class MainApp {
             updateTabPane();
         });
         vm.newFile();
-        styleComboBox.itemsProperty().bind(vm.styleListProperty());
-        styleComboBox.valueProperty().bindBidirectional(vm.seletedStyleProperty());
+//        styleComboBox.itemsProperty().bind(vm.styleListProperty());
+//        styleComboBox.valueProperty().bindBidirectional(vm.seletedStyleProperty());
         vm.loadAllStyles();
     }
 
@@ -177,13 +179,13 @@ public class MainApp {
     }
     
     @FXML
-    private void clipboardImage() throws Exception {
+    private void clipboardImage() throws Exception {   
         String outputfile="/tmp/temporaryImage.png";
         copyTo(outputfile);
         //var values = Main.openLinkImagePicker("Image not found", true);
         //if (values == null) { return; }
         String replacementText = "Image not found";
-        getSelectedFileVM().setImage(getSelectedFileControl().getCaretPosition(), replacementText, "file:"+outputfile);
+        getSelectedFileVM().setImage(getSelectedFileControl().getCaretPosition(), replacementText, "file:///"+outputfile);
     }
 
     static int copyTo(String filename) throws Exception {

@@ -2,6 +2,7 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
 <!-- Help page -->
 <VBox xmlns="http://javafx.com/javafx"
@@ -9,4 +10,15 @@
             prefHeight="400.0" prefWidth="600.0"
             fx:controller="view.Help" stylesheets="@/style/darkTheme.css">
     <Label fx:id="helpLabel"/>
+    <!-- <TextFlow>
+	  <Text text="This software was originally developed by Kiidness, and his code can be found at https://github.com/kiidness/Markdown-Editor. "/>
+ 	  <Text text="This software is licensed by Kiidness under the MIT license and remains so. " />
+	  <Text text="This software is currently being redesigned for use with phoebus, which can be found at https://github.com/shroffk/phoebus." />
+	  <Text text="" />
+
+	  <Text text="bold text and " style="-fx-font-weight: bold"/>
+	  <Text text="" />
+	  <Text text="italic text and " style="-fx-font-style: italic"/>
+	  <Text text="red text." style="-fx-stroke: red"/>
+	</TextFlow> -->
 </VBox>

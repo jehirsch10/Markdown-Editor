@@ -41,6 +41,9 @@ public abstract class MarkDownToHtmlConverter {
             line = computeMultiLinedStrongBalise(line);
             line = computeSingleLinedBalise(line);
 
+//            line = computeSingleLinedBalise(line);
+//            line = computeMultiLinedStrongBalise(line);
+            
             if (!hasComputedOneSingleLinedBalise && !mayBeTable) {
                 line = computeParagraphBalise(line);
                 if (getStrongBaliseIndex("pre") == -1) {

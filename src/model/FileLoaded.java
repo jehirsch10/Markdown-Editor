@@ -7,6 +7,12 @@ import java.beans.PropertyChangeSupport;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.commonmark.node.Node;
+import org.commonmark.parser.Parser;
+import org.commonmark.renderer.html.HtmlRenderer;
+
+// DEALS WITH FILE STUFF AND DOES THE INSTANT CONVERSION+RENDERING 
+// AND IMPLEMENTS THE ACTUAL FUNCTIONALITY OF THE SPECIAL TEXT BUTTONS
 public class FileLoaded {
     private PropertyChangeSupport support = new PropertyChangeSupport(this);
 
@@ -45,13 +51,24 @@ public class FileLoaded {
     public void setMarkDownText(String markDownText) {
         var oldValue = this.markDownText;
         this.markDownText = markDownText;
-        setHtmlText(MarkDownToHtmlConverter.convert(markDownText));
+        
+        Parser parser = Parser.builder().build();
+        HtmlRenderer html_renderer = HtmlRenderer.builder().build();
+        Node document = parser.parse(markDownText);
+        setHtmlText(html_renderer.render(document));
+        
+//        setHtmlText(MarkDownToHtmlConverter.convert(markDownText));
         updateFileName();
         support.firePropertyChange(PROP_MARKDOWN_TEXT, oldValue, markDownText);
     }
 
     public void updateHtmlText() {
-        setHtmlText(MarkDownToHtmlConverter.convert(markDownText));
+        Parser parser = Parser.builder().build();
+        HtmlRenderer html_renderer = HtmlRenderer.builder().build();
+        Node document = parser.parse(markDownText);
+        setHtmlText(html_renderer.render(document));
+        
+//        setHtmlText(MarkDownToHtmlConverter.convert(markDownText));
     }
 
     public FileLoaded(String fileName, String filePath, String markDownText) {
@@ -90,28 +107,28 @@ public class FileLoaded {
 
     private int surroundWith(int start, int end, String mdBaliseRegex, String markDownBalise) {
         int max;
-        for (int i = 10; i >= 0; i--) {
-            max = 1 + i;
-            if (start - max < 0 || markDownText.length() < end + max)
-                continue;
-
-            var subSequence = markDownText.subSequence(start - max, end + max).toString();
-
-            Pattern pattern = Pattern.compile(String.format("(%s)", mdBaliseRegex));
-            Matcher matcher = pattern.matcher(markDownText);
-            int numApparitions = 0;
-            while (matcher.find())
-                numApparitions++;
-
-            if (numApparitions > 1 && (numApparitions / 2) % 2 == 1) {
-                String tmp = getMarkDownText();
-                setMarkDownText(String.format("%s%s%s",
-                        markDownText.subSequence(0, start - max),
-                        subSequence.replaceFirst(String.format("^(.{0,%d})%s(.+)%s(.{0,%d})$", i, mdBaliseRegex, mdBaliseRegex, i), "$1$2$3"),
-                        markDownText.subSequence(end + max, markDownText.length())));
-                return (getMarkDownText().length() - tmp.length()) / 2;
-            }
-        }
+//        for (int i = 10; i >= 0; i--) {
+//            max = 1 + i;
+//            if (start - max < 0 || markDownText.length() < end + max)
+//                continue;
+//
+//            var subSequence = markDownText.subSequence(start - max, end + max).toString();
+//
+//            Pattern pattern = Pattern.compile(String.format("(%s)", mdBaliseRegex));
+//            Matcher matcher = pattern.matcher(markDownText);
+//            int numApparitions = 0;
+//            while (matcher.find())
+//                numApparitions++;
+//
+//            if (numApparitions > 1 && (numApparitions / 2) % 2 == 1) {
+//                String tmp = getMarkDownText();
+//                setMarkDownText(String.format("%s%s%s",
+//                        markDownText.subSequence(0, start - max),
+//                        subSequence.replaceFirst(String.format("^(.{0,%d})%s(.+)%s(.{0,%d})$", i, mdBaliseRegex, mdBaliseRegex, i), "$1$2$3"),
+//                        markDownText.subSequence(end + max, markDownText.length())));
+//                return (getMarkDownText().length() - tmp.length()) / 2;
+//            }
+//        }
 
         setMarkDownText(String.format("%s%s%s%s%s",
                 markDownText.subSequence(0, start),
@@ -137,10 +154,10 @@ public class FileLoaded {
         addedText.append(" ");
 
         if (selectedLine.matches("^#{1,6} .*")) {
-            lines[numberLine] = lines[numberLine].replaceFirst("^#{1,6} ", "");
-        } else {
+            selectedLine = selectedLine.replaceFirst("^#{1,6} ", "");
+        } //else {
             lines[numberLine] = String.format("%s%s", addedText, selectedLine);
-        }
+        //}
         setMarkDownText(String.join("\n", lines));
     }
 

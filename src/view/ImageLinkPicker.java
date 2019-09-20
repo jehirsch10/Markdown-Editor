@@ -106,7 +106,7 @@ public class ImageLinkPicker {
         var link = Main.openImageFileDialog();
         if (!link.isEmpty()) {
             //linkTxtField.setText("file:/" + link); // useful for windows I think
-            linkTxtField.setText("file:" + link); // useful for linux
+            linkTxtField.setText("file:///" + link); // useful for linux
         }
 
     }

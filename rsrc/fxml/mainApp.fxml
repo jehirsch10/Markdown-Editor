@@ -81,27 +81,33 @@
 
                         <Separator orientation="VERTICAL"/>
 
-                        <Button onAction="#image" minWidth="$btnSize" minHeight="$btnSize">
-                            <graphic>
-                                <ImageView image="$btnImagePicture" />
-                            </graphic>
-                        </Button>
-                        <Button onAction="#clipboardImage" minWidth="$btnSize" minHeight="$btnSize">
-                            <graphic>
-                                <ImageView image="$btnImagePicture" />
-                            </graphic>
-                        </Button>
-                        <Button onAction="#link" minWidth="$btnSize" minHeight="$btnSize"  text="⛓"/>
-                        <Button onAction="#olList" minWidth="$btnSize" minHeight="$btnSize">
-                            <graphic>
-                                <ImageView image="$btnImageOl" />
-                            </graphic>
-                        </Button>
-                        <Button onAction="#ulList" minWidth="$btnSize" minHeight="$btnSize">
-                            <graphic>
-                                <ImageView image="$btnImageUl" />
-                            </graphic>
-                        </Button>
+                        <VBox spacing="5">
+	                        <HBox spacing="5">
+		                        <Button onAction="#image" minWidth="$btnSize" minHeight="$btnSize">
+		                            <graphic>
+		                                <ImageView image="$btnImagePicture" />
+		                            </graphic>
+		                        </Button>
+		                        <Button onAction="#clipboardImage" minWidth="$btnSize" minHeight="$btnSize">
+		                            <graphic>
+		                                <ImageView image="$btnImagePicture" />
+		                            </graphic>
+		                        </Button>
+	                        </HBox>
+	                        <HBox spacing="5">
+		                        <Button onAction="#link" minWidth="$btnSize" minHeight="$btnSize"  text="⛓"/>
+		                        <Button onAction="#olList" minWidth="$btnSize" minHeight="$btnSize">
+		                            <graphic>
+		                                <ImageView image="$btnImageOl" />
+		                            </graphic>
+		                        </Button>
+		                        <Button onAction="#ulList" minWidth="$btnSize" minHeight="$btnSize">
+		                            <graphic>
+		                                <ImageView image="$btnImageUl" />
+		                            </graphic>
+		                        </Button>
+	                        </HBox>
+                        </VBox>
 
                         <Separator orientation="VERTICAL"/>
 
@@ -119,13 +125,14 @@
                         </VBox>
 
                         <Separator orientation="VERTICAL"/>
+                        
                     </HBox>
-                </left>
+                </left>                                             
                 <right>
                     <HBox nodeOrientation="RIGHT_TO_LEFT" spacing="15">
-                        <ComboBox fx:id="styleComboBox"/>
+                        <!-- <ComboBox fx:id="styleComboBox"/> -->
 
-                        <Separator orientation="VERTICAL"/>
+                        <!-- <Separator orientation="VERTICAL"/> -->
 
                         <VBox spacing="5">
                             <HBox spacing="5">
@@ -142,7 +149,13 @@
                             </HBox>
                             <Label maxWidth="Infinity" alignment="CENTER" textAlignment="CENTER">Export</Label>
                         </VBox>
+                        
+                        <Separator orientation="VERTICAL"/>
 
+						<HBox nodeOrientation="RIGHT_TO_LEFT" spacing="5">
+                        	<Button text="Help" onAction="#help" userData="3" minWidth="90" minHeight="45" style="-fx-font-weight: bold; -fx-font-size: 18"/>
+                        </HBox>
+                    
                         <Separator orientation="VERTICAL"/>
                     </HBox>
                 </right>
