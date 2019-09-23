@@ -29,7 +29,9 @@
         <Integer fx:id="exportImageHeight" fx:value="60"/>
 
         <Image fx:id="btnImagePicture" url="/images/picture.png" requestedWidth="$imageSize" requestedHeight="$imageSize"/>
-        <Image fx:id="btnImageOl" url="/images/ol.png" requestedWidth="$imageSize" requestedHeight="$imageSize"/>
+        <Image fx:id="btnImageCopyPicture" url="/images/copy.png" requestedWidth="$imageSize" requestedHeight="$imageSize"/>
+		<Image fx:id="btnImageURL" url="/images/link.png" requestedWidth="$imageSize" requestedHeight="$imageSize"/>
+		<Image fx:id="btnImageOl" url="/images/ol.png" requestedWidth="$imageSize" requestedHeight="$imageSize"/>
         <Image fx:id="btnImageUl" url="/images/ul.png" requestedWidth="$imageSize" requestedHeight="$imageSize"/>
         <Image fx:id="btnImageHighlight" url="/images/highlight.png" requestedWidth="$imageSize" requestedHeight="$imageSize"/>
 
@@ -90,12 +92,16 @@
 		                        </Button>
 		                        <Button onAction="#clipboardImage" minWidth="$btnSize" minHeight="$btnSize">
 		                            <graphic>
-		                                <ImageView image="$btnImagePicture" />
+		                                <ImageView image="$btnImageCopyPicture" />
 		                            </graphic>
 		                        </Button>
 	                        </HBox>
 	                        <HBox spacing="5">
-		                        <Button onAction="#link" minWidth="$btnSize" minHeight="$btnSize"  text="⛓"/>
+		                        <Button onAction="#link" minWidth="$btnSize" minHeight="$btnSize">
+		                        	<graphic>
+		                                <ImageView image="$btnImageURL" />
+		                            </graphic>
+		                        </Button>
 		                        <Button onAction="#olList" minWidth="$btnSize" minHeight="$btnSize">
 		                            <graphic>
 		                                <ImageView image="$btnImageOl" />

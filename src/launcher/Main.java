@@ -17,6 +17,10 @@ import view.ImageLinkPicker;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.util.ArrayList;
+import java.util.Arrays;
+
+import view.MainApp;
 
 public class Main extends Application {
     private static Class classValue;
@@ -24,12 +28,17 @@ public class Main extends Application {
     public static Stage getParentStage() {
         return stage;
     }
-
+    public static MainApp controller;
+    
     @Override
     public void start(Stage primaryStage) throws Exception{
         try {
             classValue = getClass();
-            Parent root = FXMLLoader.load(getClass().getResource("/fxml/mainApp.fxml"));
+   
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/mainApp.fxml"));              
+            Parent root = (Parent)fxmlLoader.load();          
+            controller = fxmlLoader.<MainApp>getController();
+            
             primaryStage.setTitle("MD Editor");
 
             var scene = new Scene(root);
@@ -39,6 +48,22 @@ public class Main extends Application {
             primaryStage.show();
         } catch (Exception e) {
             displayError(e);
+        }
+    }
+    
+    @Override
+    public void stop(){
+        ArrayList<String> tempFiles = controller.returnAmount();
+        int size = tempFiles.size();
+        if(size>0) {
+            System.out.println("Deleting temporary created files: " + Arrays.toString(tempFiles.toArray()));
+            for(int i=0; i < size; i++) {
+               File file = new File(tempFiles.remove(0)); 
+               if(file.delete()) {}
+               else {
+                   System.out.println("Failed to delete: " + file.getPath());
+               }
+            }
         }
     }
 

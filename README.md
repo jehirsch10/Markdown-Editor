@@ -15,8 +15,6 @@ An open source markdown editor written in `JavaFX`.
 ### Dependencies
 This project is using [RichTextFX](https://github.com/FXMisc/RichTextFX)
 
-Pdf and HTML icons made by Smashicons from [FlatIcon](www.flaticon.com)
-
 Based on [Github flavored markdown](https://github.github.com/gfm/)
 
 ### Architecture

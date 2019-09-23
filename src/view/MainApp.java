@@ -22,6 +22,7 @@ import java.awt.image.RenderedImage;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.InvalidPathException;
+import java.util.ArrayList;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
@@ -30,6 +31,8 @@ import javax.imageio.ImageIO;
 
 // IMPLEMENTS THE BASIC FUNCTIONALITY OF ALL BUTTONS
 public class MainApp {
+    private ArrayList<String> clipImgToDelete = new ArrayList<String>();
+    
     private ManagerVM vm = new ManagerVM();
 
     @FXML
@@ -178,9 +181,16 @@ public class MainApp {
         getSelectedFileVM().setImage(getSelectedFileControl().getCaretPosition(), values[0], values[1]);
     }
     
+    public ArrayList<String> returnAmount() {
+        return clipImgToDelete;
+    }
     @FXML
-    private void clipboardImage() throws Exception {   
-        String outputfile="/tmp/temporaryImage.png";
+    private void clipboardImage() throws Exception {  
+        int index = 0;
+        while(new File("/tmp/temporaryImage"+index+".png").exists()) {
+            index++;
+        }
+        String outputfile="/tmp/temporaryImage"+index+".png";
         copyTo(outputfile);
         //var values = Main.openLinkImagePicker("Image not found", true);
         //if (values == null) { return; }
@@ -188,14 +198,14 @@ public class MainApp {
         getSelectedFileVM().setImage(getSelectedFileControl().getCaretPosition(), replacementText, "file:///"+outputfile);
     }
 
-    static int copyTo(String filename) throws Exception {
+    int copyTo(String filename) throws Exception {
         Transferable content = Toolkit.getDefaultToolkit().getSystemClipboard().getContents(null);
         if(content==null){
             System.err.println("error: nothing found in clipboard");
             return 1;
         }
         if(!content.isDataFlavorSupported(DataFlavor.imageFlavor)){
-            System.err.println("error: no image found in clipboard");
+            System.err.println("error: incorrect type of data found in clipboard");
             return 2;
         }
         BufferedImage img = (BufferedImage)content.getTransferData(DataFlavor.imageFlavor);
@@ -207,6 +217,7 @@ public class MainApp {
         File outfile=new File(filename);
         ImageIO.write(img,ext,outfile);
         System.err.println("image copied to: " + outfile.getAbsolutePath());
+        clipImgToDelete.add(filename);
         return 0;
     }
     static String ext(String filename){
