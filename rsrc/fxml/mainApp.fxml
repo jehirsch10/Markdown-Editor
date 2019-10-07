@@ -68,14 +68,14 @@
                             <HBox spacing="5">
                                 <Button fx:id="boldBtn" onAction="#bold" minWidth="$btnSize" minHeight="$btnSize" style="-fx-font-weight: bold"/>
                                 <Button fx:id="italicBtn" onAction="#italic" minWidth="$btnSize" minHeight="$btnSize" style="-fx-font-style: italic"/>
-                                <Button fx:id="strikeThroughBtn" onAction="#strikeThrough" minWidth="$btnSize" minHeight="$btnSize"/>
+                                <!-- <Button fx:id="strikeThroughBtn" onAction="#strikeThrough" minWidth="$btnSize" minHeight="$btnSize"/> -->
                             </HBox>
                             <HBox spacing="5">
-                                <Button onAction="#highlight" minWidth="$btnSize" minHeight="$btnSize">
+                                <!-- <Button onAction="#highlight" minWidth="$btnSize" minHeight="$btnSize">
                                     <graphic>
                                         <ImageView image="$btnImageHighlight" />
                                     </graphic>
-                                </Button>
+                                </Button> -->
                                 <Button fx:id="codeBtn" onAction="#code" minWidth="$btnSize" minHeight="$btnSize" style="-fx-font-weight: bold"/>
                                 <Button fx:id="quoteBtn" onAction="#quote" minWidth="$btnSize" minHeight="$btnSize" style="-fx-font-weight: bold"/>
                             </HBox>

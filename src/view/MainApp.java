@@ -50,7 +50,7 @@ public class MainApp {
     @FXML
     private MenuItem menuItemNewFile, menuItemOpen, menuItemSave, menuItemSaveAs, menuItemHelp, menuItemExportAs;
     @FXML
-    private Button boldBtn, italicBtn, strikeThroughBtn, codeBtn, quoteBtn;
+    private Button boldBtn, italicBtn, codeBtn, quoteBtn; //strikeThroughBtn
     // -----
 
     private FileEditorControl getSelectedFileControl() {
@@ -256,10 +256,12 @@ public class MainApp {
 
     @FXML
     private void title(ActionEvent event) {
+        var caretPosition = getSelectedFileControl().getCaretPosition();
         var node = (Node)event.getSource();
         String data = (String)node.getUserData();
         int number = Integer.parseInt(data);
         getSelectedFileVM().setTitle(getCurrentLine(),  number);
+        getSelectedFileControl().resetCaretPosition(caretPosition);
     }
 
     @FXML
@@ -299,7 +301,7 @@ public class MainApp {
 
         boldBtn.setText(bundle.getString("boldBtn"));
         italicBtn.setText(bundle.getString("italicBtn"));
-        strikeThroughBtn.setText(bundle.getString("strikeThrough"));
+//        strikeThroughBtn.setText(bundle.getString("strikeThrough"));
         codeBtn.setText(bundle.getString("codeBtn"));
         quoteBtn.setText(bundle.getString("quoteBtn"));
     }

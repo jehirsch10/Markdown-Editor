@@ -2,7 +2,7 @@
     /* -fx-fill: white; */
     -fx-fill: black;
 }
-file:
+/* file:
 .title1 {
 	-fx-fill: #81cfe0;
 	-fx-font-size: 30px;
@@ -34,26 +34,26 @@ file:
 }
 
 .bold {
-	/* -fx-fill: white; */
+	/* -fx-fill: white; 
 	-fx-fill: black;
 	-fx-font-weight: bold;
 }
 
-.italic {
-    /* -fx-fill: #ffffcc; */
+ .italic {
+    /* -fx-fill: #ffffcc; 
     -fx-fill: #222222;
     -fx-font-style: italic;
 }
 
-.italicbold {
-    /* -fx-fill: #fff9de; */
+/*.italicbold {
+    /* -fx-fill: #fff9de; 
     -fx-fill: #222222;
     -fx-font-weight: bold;
     -fx-font-style: italic;
 }
 
 .boldstrikethrough {
-    /* -fx-fill: white; */
+    /* -fx-fill: white; 
     -fx-fill: black;
     -fx-font-weight: bold;
     -fx-strikethrough: true;
@@ -61,7 +61,7 @@ file:
 
 .strikethrough {
     -fx-strikethrough: true;
-}
+}*/
 
 .styled-text-area { 
     /* -fx-background-color: #222222;  /* this is black */ */
@@ -74,7 +74,7 @@ file:
  	-fx-background-color: white;
 }
 
-.balise {
+/* .balise {
  -fx-fill: green;
 }
 
@@ -84,4 +84,4 @@ file:
 
 .blockcode {
  -fx-fill: #006400;
-}
+} */
