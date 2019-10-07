@@ -15,13 +15,13 @@ An open source markdown editor written in `JavaFX`.
 ### Dependencies
 This project is using [RichTextFX](https://github.com/FXMisc/RichTextFX)
 
-Based on [Github flavored markdown](https://github.github.com/gfm/)
+Based on [CommonMark(from atlassian)](https://github.com/atlassian/commonmark-java)
 
 ### Architecture
 Markdown Editor is made with [MVVM](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel) pattern. It separate clearly JavaFX view and Java back-end, allowing you to use the Model for view made with another technology (for example Swing or else).
 
 ## Download
-[JAR and EXE available here](https://github.com/kiidness/Markdown-Editor/releases/download/1.0.0/markdown-editor-1.0.0.zip)
+[OLD VERSION: JAR and EXE available here](https://github.com/kiidness/Markdown-Editor/releases/download/1.0.0/markdown-editor-1.0.0.zip)
 
 ## Set-Up (NEW) 
 1. install a recent java(10+)
@@ -37,7 +37,7 @@ Markdown Editor is made with [MVVM](https://en.wikipedia.org/wiki/Model%E2%80%93
 	* html2pdf fat jar from [itext-pdfhtml](https://github.com/itext/i7j-pdfhtml) and add it to the classpath
 	* kernel jar from [itext](https://github.com/itext/itext7) and add it to the classpath
 
-## Releases
+## OLD Releases
 - [1.1.8-beta](https://github.com/kiidness/Markdown-Editor/releases/tag/1.1.8-beta)
 - [1.0.0-beta](https://github.com/kiidness/Markdown-Editor/releases/tag/1.0.0)
 
